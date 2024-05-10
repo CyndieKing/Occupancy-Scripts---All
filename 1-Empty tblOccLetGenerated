@@ -1,0 +1,2 @@
+-- Empty Occupancy Table 
+delete from CELINK.TBLOCCLETGENERATED;
