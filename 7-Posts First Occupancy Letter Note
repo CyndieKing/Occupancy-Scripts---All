@@ -1,0 +1,13 @@
+-- Insert the Loan Notes for 1st Occ Cert Letter
+	INSERT INTO CELINK.TBLLOANNOTES (INTSUBSERVICERLOANNUMBER, 
+		CHRLOANNOTES, 
+		DTMNOTEDATE, 
+		CHRUSERID, 
+		BLNPRIORITY)
+	SELECT LOANNUMBER ,
+	'Sent First Occupancy Letter',
+	CURRENT TIMESTAMP,
+	'cking', -- replace this with your own userid
+	0
+	FROM CELINK.TBLOCCLETGENERATED
+	WHERE LETTERNUMBER = 1;
