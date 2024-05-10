@@ -1,0 +1,7 @@
+-- Set the 1st letter sent date 
+	UPDATE CELINK.tblOccupancy
+	SET OCC1stOCCLETTERSENTDATE = CURRENT_DATE,
+		OCC2NDOCCLETTERSENTDATE = NULL	-- The 2nd letter for these loans will be sent next month
+	WHERE OCCLOANNUMBER IN (SELECT LOANNUMBER 
+				FROM CELINK.TBLOCCLETGENERATED
+				Where LETTERNUMBER =1);
