@@ -1,0 +1,6 @@
+-- Get letter generated counts			
+	Select LetterNumber as WhichLetter,
+		Count(LoanNumber) as LetterCount
+	From celink.tblOccLetGenerated
+	Group by LetterNumber
+	Order by LetterNumber asc;
