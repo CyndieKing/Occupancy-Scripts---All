@@ -1,0 +1,6 @@
+-- Get loan note counts
+	Select chrloannotes, count(intsubservicerloannumber) as LoanCount
+	From celink.tblLoanNotes
+	Where chrloannotes in ('Sent First Occupancy Letter', 'Sent Second Occupancy Letter')
+	and dtmnotedate >= First_Day(Current_Date)
+	group by chrloannotes;
