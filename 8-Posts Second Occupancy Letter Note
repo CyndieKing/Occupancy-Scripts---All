@@ -1,0 +1,13 @@
+-- Insert the Loan Notes for 2nd Occ Cert Letter
+	INSERT INTO CELINK.TBLLOANNOTES (INTSUBSERVICERLOANNUMBER, 
+		CHRLOANNOTES, 
+		DTMNOTEDATE, 
+		CHRUSERID, 
+		BLNPRIORITY)
+	SELECT LOANNUMBER ,
+	'Sent Second Occupancy Letter',
+	CURRENT TIMESTAMP,
+	'cking', -- replace this with your own userid
+	0
+	FROM CELINK.TBLOCCLETGENERATED
+	WHERE LETTERNUMBER = 2;
